@@ -16,15 +16,14 @@ pokemons_list = [
 ]
 
 class personagem:
-    def __init__(self, age, city, name=None, pokemons=[]):
+    def __init__(self, age, city, pokemons=[], name=None):
         self.age =age
         self.city =city
+        self.pokemons = pokemons
         if name:
             self.name = name
         else:
             self.name = random.choice(list_names)
-        self.pokemons = pokemons
-
 
     def __str__(self):
         return (" Character Name: {}, Age: {}, City: {}".format(self.name, self.age, self.city))
@@ -52,7 +51,7 @@ class enemy(personagem):
         if not pokemons:
             for i in range(random.randint(1,6)):
                 pokemons.append(random.choice(pokemons_list))
-        super().__init__(age,city,name,pokemons)
+        super().__init__(name,pokemons)
         if age:
             self.age = age
         else:
