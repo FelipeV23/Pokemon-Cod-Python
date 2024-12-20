@@ -45,6 +45,7 @@ class player(personagem):
         self.pokemons.append(pokemon)
         print("{} Capture {} successfully!!".format(self.name, pokemon.specie))
 
+
 class enemy(personagem):
     type = "enemy"
     def __init__(self, pokemons=[], name=None, age=None, city=None):
